@@ -1,4 +1,4 @@
-module johnellmore/docs-barcode
+module github.com/johnellmore/docs-barcode
 
 go 1.21.3
 

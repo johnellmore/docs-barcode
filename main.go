@@ -56,31 +56,25 @@ func main() {
 	for pageNum := 0; pageNum < *pages; pageNum++ {
 		lp.NewPage()
 		for _, label := range labels {
-			// debugging
-			// fmt.Printf("Label at (%.2f, %.2f)\n", label.X, label.Y)
 			if *drawOutline {
 				lp.HollowRect(label.X, label.Y, label.W, label.H)
 			}
 
-			// determine barcode value
 			barcodeVal := fmt.Sprintf("%s%06d", *prefix, nextBarcodeNum)
 			if err != nil {
 				panic(err)
 			}
 
-			// text
 			err := lp.BottomCenteredText(label.X, label.Y, label.W, label.H, barcodeVal)
 			if err != nil {
 				panic(err)
 			}
 
-			// calculate the barcode's bounding box inside the label's barcode padding
 			bcX := label.X + page.LabelBarcodePadding[3]
 			bcY := label.Y + page.LabelBarcodePadding[0]
 			bcW := label.W - page.LabelBarcodePadding[1] - page.LabelBarcodePadding[3]
 			bcH := label.H - page.LabelBarcodePadding[0] - page.LabelBarcodePadding[2]
 
-			// draw the barcode itself
 			unitBc, err := NewBarcode(barcodeVal)
 			bc := unitBc.Project(bcX, bcY, bcW, bcH)
 			for _, bar := range bc.bars {
