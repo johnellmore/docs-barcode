@@ -15,7 +15,7 @@ Generating a PDF requires a font. This tool uses Roboto Mono, and the font file 
 ```sh
 ./docs-barcode --next 123 --prefix FOOBAR --pages 2 --output foobar.pdf
 ```
-This outputs a file like [foobar.pdf](./example/foobar.pdf).
+This outputs a file like [`foobar.pdf`](./example/foobar.pdf).
 
 ## Docs
 
@@ -35,6 +35,6 @@ Usage of ./docs-barcode:
     	barcode prefix (default "not set")
 ```
 
-The sheet dimensions are hardcoded to the ones I have on hand. They're not adjustable at the command line (and adjusting them requires too many options). If you need to adjust them to a new type of sheet, you'll need to modify `main.go` directly and rebuild.
+The sheet dimensions are hardcoded to the ones I have on hand. They're not adjustable at the command line (and adjusting them requires too many options). If you need to adjust them to a new type of sheet, you'll need to modify [the relevant lines in `main.go`](./main.go#L34-L42) directly and rebuild.
 
 The app always generates full sheets, since I want to maximize use of the sheets I have.
