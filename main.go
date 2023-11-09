@@ -32,14 +32,14 @@ func main() {
 
 	// HARDCODED to the label sheets I have. All measurements in inches.
 	page := LabelPage{
-		LabelWidth:          1.5,
+		LabelWidth:          1.75,
 		LabelHeight:         0.5,
-		LabelBarcodePadding: [4]float64{0.05, 0.05, 0.2, 0.05},
+		LabelBarcodePadding: [4]float64{0.1, 0.1, 0.2, 0.1},
 		Rows:                20,
 		Columns:             4,
-		Margins:             [4]float64{0.5, 0.5, 0.5, 0.5},
+		Margins:             [4]float64{0.46875, 0.5625, 0.53125, 0.5625},
 		PageWidth:           8.5,
-		PageHeight:          11,
+		PageHeight:          10.9375,
 	}
 
 	lp, err := NewLabelPDF()
