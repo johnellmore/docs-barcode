@@ -39,7 +39,7 @@ func main() {
 		Columns:             4,
 		Margins:             [4]float64{0.46875, 0.5625, 0.53125, 0.5625},
 		PageWidth:           8.5,
-		PageHeight:          10.9375,
+		PageHeight:          11,
 	}
 
 	lp, err := NewLabelPDF()
